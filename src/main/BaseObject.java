@@ -41,8 +41,14 @@ public abstract class BaseObject {
         this.radius = radius;
     }
 
+    /**
+     * This method draws the object on the canvas.
+     */
     public abstract void draw();
 
+    /**
+     * Move by one step.
+     */
     public abstract void move();
 
     public void die(){
@@ -59,5 +65,15 @@ public abstract class BaseObject {
          * and compare it to bigger radius (maxRadius)
          */
         return Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2)) < maxRadius;
+    }
+
+    /**
+     * Check whether (x, y) is beyond the borders.
+     */
+    public void checkBorders(double minx, double maxx, double miny, double maxy) {
+        if (x < minx) x = minx;
+        if (x > maxx) x = maxx;
+        if (y < miny) y = miny;
+        if (y > maxy) y = maxy;
     }
 }
