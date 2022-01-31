@@ -6,11 +6,6 @@ public class Rocket extends BaseObject{
     }
 
     @Override
-    public void draw() {
-
-    }
-
-    @Override
     public void move() {
 
     }

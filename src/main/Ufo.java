@@ -6,11 +6,6 @@ public class Ufo extends BaseObject{
     }
 
     @Override
-    public void draw() {
-
-    }
-
-    @Override
     public void move() {
 
     }

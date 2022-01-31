@@ -1,9 +1,9 @@
 package main;
 
 public abstract class BaseObject {
-    private double x;
-    private double y;
-    private double radius;
+    protected double x;
+    protected double y;
+    protected double radius;
     private boolean isAlive;
 
     public BaseObject(double x, double y, double radius) {
@@ -44,7 +44,7 @@ public abstract class BaseObject {
     /**
      * This method draws the object on the canvas.
      */
-    public abstract void draw();
+    public abstract void draw(Canvas canvas);
 
     /**
      * Move by one step.

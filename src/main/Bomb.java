@@ -1,17 +1,24 @@
 package main;
 
 public class Bomb extends BaseObject{
-    public Bomb(double x, double y, double radius) {
-        super(x, y, radius);
+    public Bomb(double x, double y) {
+        super(x, y, 1);
     }
 
+    /**
+     * Draw the object on the canvas.
+     */
     @Override
-    public void draw() {
-
+    public void draw(Canvas canvas) {
+        canvas.setPoint(x, y, 'B');
     }
 
+    /**
+     * Move the object down by one step.
+     */
     @Override
     public void move() {
-
+        y++;
     }
 }
+
