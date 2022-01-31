@@ -40,4 +40,24 @@ public abstract class BaseObject {
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    public abstract void draw();
+
+    public abstract void move();
+
+    public void die(){
+        isAlive = false;
+    }
+
+    public boolean intersects(BaseObject o) {
+        double distX = this.getX() - o.getX();
+        double distY = this.getY() - o.getY();
+        double maxRadius = Math.max(this.getRadius(), o.getRadius());
+        /**
+         * We check if circle is within of another:
+         * We measure distance between centers (sqrt(distX^2 + distY^2)
+         * and compare it to bigger radius (maxRadius)
+         */
+        return Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2)) < maxRadius;
+    }
 }
